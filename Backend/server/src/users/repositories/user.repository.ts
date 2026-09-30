@@ -1,6 +1,6 @@
 import { User } from "@users/schemas/user.schema.js";
 import { BaseRepository } from "@common/base/base.repository.js";
-import { IUserRepository } from "@users/interfaces/user.repository.interface.js";
+import type { IUserRepository } from "@users/interfaces/user.repository.interface.js";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { Injectable } from "@nestjs/common";

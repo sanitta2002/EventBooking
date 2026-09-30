@@ -61,12 +61,5 @@
     "typescript": "^6.0.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.1.2"
-  },
-  "imports": {
-    "#common/*": "./dist/src/common/*",
-    "#users/*": "./dist/src/users/*",
-    "#auth/*": "./dist/src/auth/*",
-    "#services/*": "./dist/src/services/*",
-    "#bookings/*": "./dist/src/bookings/*"
   }
 }
