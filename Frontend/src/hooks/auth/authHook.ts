@@ -26,7 +26,11 @@ export const useAuthHook = () => {
         })
       );
       toast.success("Login successful!");
-      navigate(FRONT_ROUTES.DASHBOARD);
+      if (res.user?.role?.toLowerCase() === "admin") {
+        navigate(FRONT_ROUTES.ADMIN.DASHBOARD);
+      } else {
+        navigate(FRONT_ROUTES.DASHBOARD);
+      }
     } catch (err: unknown) {
       const error = err as ApiError;
       toast.error(error.response?.data?.message || "Login failed");

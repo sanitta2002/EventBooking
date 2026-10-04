@@ -36,28 +36,28 @@ export default function RegisterForm() {
   });
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8F7F5] relative overflow-hidden p-4 font-sans text-[#2A2A2A]">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 relative overflow-hidden p-4 font-sans text-black">
       {/* Subtle Premium Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute left-1/4 top-1/4 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ABA79F]/10 blur-[150px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-[600px] w-[600px] translate-x-1/2 translate-y-1/2 rounded-full bg-[#ABA79F]/10 blur-[120px]" />
+        <div className="absolute left-1/4 top-1/4 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/10 blur-[150px]" />
+        <div className="absolute right-1/4 bottom-1/4 h-[600px] w-[600px] translate-x-1/2 translate-y-1/2 rounded-full bg-black/10 blur-[120px]" />
       </div>
 
       <div className="w-full max-w-md relative z-10">
-        <div className="bg-white border border-[#ABA79F]/20 rounded-2xl p-8 sm:p-10 shadow-2xl shadow-[#ABA79F]/10 space-y-8">
+        <div className="bg-white border border-gray-200 rounded-2xl p-8 sm:p-10 shadow-2xl shadow-gray-200 space-y-8">
           <div className="text-center space-y-3">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#F8F7F5] mb-2 border border-[#ABA79F]/30">
-              <User className="w-6 h-6 text-[#ABA79F]" />
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gray-50 mb-2 border border-gray-200">
+              <User className="w-6 h-6 text-gray-500" />
             </div>
-            <h1 className="text-3xl font-light tracking-tight text-[#2A2A2A]">Create Account</h1>
-            <p className="text-sm text-[#ABA79F]">Join us to start booking events</p>
+            <h1 className="text-3xl font-bold tracking-tight text-black">Create Account</h1>
+            <p className="text-sm text-gray-500">Join us to start booking events</p>
           </div>
 
           <form onSubmit={handleSubmit(handleRegister)} className="space-y-6">
             <div className="space-y-5">
               <div className="space-y-2">
                 <div className="relative">
-                  <User className="absolute left-3 top-3.5 h-5 w-5 text-[#ABA79F]" />
+                  <User className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
                   <Input
                     {...register("name")}
                     type="text"
@@ -72,7 +72,7 @@ export default function RegisterForm() {
 
               <div className="space-y-2">
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3.5 h-5 w-5 text-[#ABA79F]" />
+                  <Mail className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
                   <Input
                     {...register("email")}
                     type="email"
@@ -87,7 +87,7 @@ export default function RegisterForm() {
 
               <div className="space-y-2">
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3.5 h-5 w-5 text-[#ABA79F]" />
+                  <Lock className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
                   <Input
                     {...register("password")}
                     type={showPassword ? "text" : "password"}
@@ -97,7 +97,7 @@ export default function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-3.5 text-[#ABA79F] hover:text-[#2A2A2A] transition-colors"
+                    className="absolute right-3 top-3.5 text-gray-500 hover:text-black transition-colors"
                   >
                     {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
@@ -109,7 +109,7 @@ export default function RegisterForm() {
 
               <div className="space-y-2">
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3.5 h-5 w-5 text-[#ABA79F]" />
+                  <Lock className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
                   <Input
                     {...register("confirmPassword")}
                     type={showConfirmPassword ? "text" : "password"}
@@ -119,7 +119,7 @@ export default function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-3.5 text-[#ABA79F] hover:text-[#2A2A2A] transition-colors"
+                    className="absolute right-3 top-3.5 text-gray-500 hover:text-black transition-colors"
                   >
                     {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
@@ -135,9 +135,9 @@ export default function RegisterForm() {
             </Button>
           </form>
 
-          <div className="text-center text-sm text-[#2A2A2A]/70">
+          <div className="text-center text-sm text-black/70">
             Already have an account?{" "}
-            <Link to={FRONT_ROUTES.AUTH.LOGIN} className="text-[#ABA79F] hover:text-[#96928a] font-medium transition-colors border-b border-[#ABA79F]/30 pb-0.5">
+            <Link to={FRONT_ROUTES.AUTH.LOGIN} className="text-gray-500 hover:text-[#96928a] font-medium transition-colors border-b border-gray-200 pb-0.5">
               Sign in
             </Link>
           </div>

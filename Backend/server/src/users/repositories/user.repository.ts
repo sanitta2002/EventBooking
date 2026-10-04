@@ -7,11 +7,15 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class UserRepository extends BaseRepository<User> implements IUserRepository {
-     constructor(@InjectModel(User.name) userModel: Model<User>) {
+  constructor(@InjectModel(User.name) userModel: Model<User>) {
     super(userModel);
   }
+
   async findByEmail(email: string): Promise<User | null> {
-      return await this._Model.findOne({ email }).exec();
+    return await this._Model.findOne({ email }).exec();
   }
-  
+
+  async findAll(): Promise<User[]> {
+    return (await this._Model.find({}, { password: 0 }).exec()) as unknown as User[];
+  }
 }

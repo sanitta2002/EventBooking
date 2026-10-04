@@ -1,10 +1,21 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule} from './app.module.js';
+import { AppModule } from './app.module.js';
 import { ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
+import { json, urlencoded } from 'express';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.setGlobalPrefix('api');
+  app.enableCors({
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  });
+  
+  app.use(json({ limit: '50mb' }));
+  app.use(urlencoded({ extended: true, limit: '50mb' }));
+  
   app.use(helmet());
   app.useGlobalPipes(
     new ValidationPipe({
